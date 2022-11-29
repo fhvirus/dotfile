@@ -1,0 +1,8 @@
+set recolor
+set recolor-keephue
+set recolor-lightcolor \#4C566A
+set recolor-darkcolor \#ECEFF4
+set statusbar-bg \#4C566A
+set statusbar-fg \#ECEFF4
+set highlight-color \#5E81AC
+set highlight-active-color \#88C0D0
