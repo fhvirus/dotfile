@@ -10,14 +10,18 @@ export PATH=$HOME/.local/bin:$PATH
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-
+export BAT_THEME="Nord"
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info \
+	--color='fg:#D8DEE9,bg:#2E3440,hl:#81A1C1'\
+	--color='fg+:#D8DEE9,bg+:#3B4252,hl+:#81A1C1'\
+	--color='info:#616E88,border:#3B4252,prompt:#81A1C1'\
+	--color='pointer:#EBCB8B,marker:#D08770,spinner:#81A1C1,header:#616E88'"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="philips"
-
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
