@@ -32,9 +32,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-alias owo="vim ~/OWO/eek.cpp"
-alias uwu="vim ~/OWO/jizz.cpp"
-alias cwc="vim ~/OWO/cwc.c"
+alias owo="vim ~/cp/owo/eek.cpp"
+alias uwu="vim ~/cp/owo/jizz.cpp"
+alias cwc="vim ~/cp/owo/cwc.c"
 alias reload="clear && . ~/.zshrc"
 alias eek="toilet -f future --gay \"[Knapsack DP is harder than FFT.]\" -w 95"
 alias jizz="toilet -f future --gay \"[Knapsack DP is NP-Hard, but FFT is O(N log N).]\" -w 135"
