@@ -1,10 +1,10 @@
 [Groups/0]
 # Group Name
-Name=Default
+Name=All
 # Layout
 Default Layout=us
 # Default Input Method
-DefaultIM=cangjie5
+DefaultIM=chewing
 
 [Groups/0/Items/0]
 # Name
@@ -14,17 +14,23 @@ Layout=
 
 [Groups/0/Items/1]
 # Name
-Name=cangjie5
+Name=mozc
+# Layout
+Layout=
+
+[Groups/0/Items/2]
+# Name
+Name=chewing
 # Layout
 Layout=
 
 [Groups/1]
 # Group Name
-Name=All
+Name=Default
 # Layout
 Default Layout=us
 # Default Input Method
-DefaultIM=chewing
+DefaultIM=cangjie5
 
 [Groups/1/Items/0]
 # Name
@@ -34,17 +40,11 @@ Layout=
 
 [Groups/1/Items/1]
 # Name
-Name=mozc
-# Layout
-Layout=
-
-[Groups/1/Items/2]
-# Name
-Name=chewing
+Name=cangjie5
 # Layout
 Layout=
 
 [GroupOrder]
-0=Default
-1=All
+0=All
+1=Default
 
