@@ -24,6 +24,12 @@ Name=chewing
 # Layout
 Layout=
 
+[Groups/0/Items/3]
+# Name
+Name=cangjie5
+# Layout
+Layout=
+
 [Groups/1]
 # Group Name
 Name=Default
@@ -45,6 +51,6 @@ Name=cangjie5
 Layout=
 
 [GroupOrder]
-0=All
-1=Default
+0=Default
+1=All
 

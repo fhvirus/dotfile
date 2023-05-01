@@ -41,7 +41,18 @@ alias jizz="toilet -f future --gay \"[Knapsack DP is NP-Hard, but FFT is O(N log
 alias clock="tock -c -m -s"
 alias fd="fdfind"
 alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++17 -fsanitize=undefined,address'
-alias csievpn='sudo openvpn ~/school/NTU/newconfig25.ovpn'
-neofetch
+alias csievpn='sudo openvpn ~/Documents/school/NTU/newconfig25.ovpn'
 
 source $HOME/.fzf.zsh
+
+neofetch
+
+eval $(thefuck --alias)
+
+export PATH=$PATH:/home/lemon/.go/bin
+
+export GOPATH=/home/lemon/go
+
+export PATH=$PATH:/home/lemon/go/bin
+
+[ -f "/home/lemon/.ghcup/env" ] && source "/home/lemon/.ghcup/env" # ghcup-env
