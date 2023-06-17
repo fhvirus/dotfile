@@ -6,3 +6,7 @@ set statusbar-bg \#4C566A
 set statusbar-fg \#ECEFF4
 set highlight-color \#5E81AC
 set highlight-active-color \#88C0D0
+
+# https://sspai.com/post/64080
+set synctex true
+set synctex-editor-command "nvr --remote-silent %f -c %l"
