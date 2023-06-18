@@ -3,7 +3,6 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/lemon/.oh-my-zsh"
-export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
 export PATH=$HOME/.config/rofi/scripts:$PATH
 export PATH=$HOME/.local/bin:$PATH
@@ -47,8 +46,6 @@ source $HOME/.fzf.zsh
 
 neofetch
 
-eval $(thefuck --alias)
-
 export PATH=$PATH:/home/lemon/.go/bin
 
 export GOPATH=/home/lemon/go
@@ -56,3 +53,7 @@ export GOPATH=/home/lemon/go
 export PATH=$PATH:/home/lemon/go/bin
 
 [ -f "/home/lemon/.ghcup/env" ] && source "/home/lemon/.ghcup/env" # ghcup-env
+
+eval $(thefuck --alias)
+
+alias vim=nvim

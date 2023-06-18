@@ -30,8 +30,19 @@ local plugins = {
       'nvim-tree/nvim-web-devicons', -- optional
     },
   },
-  'iamcco/markdown-preview.nvim',
+  {
+    'iamcco/markdown-preview.nvim',
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
   'jghauser/follow-md-links.nvim',
+  'folke/zen-mode.nvim',
+  'tpope/vim-fugitive',
+
+  {
+    "L3MON4D3/LuaSnip",
+    version = "1.*",
+    build = "make install_jsregexp"
+  },
 
   'nvim-treesitter/nvim-treesitter',
   'nvim-treesitter/playground',
