@@ -29,3 +29,6 @@ o.shiftround = true
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so ~/.config/nvim/init.lua")
 end)
+vim.keymap.set("n", "<leader>z", function()
+    vim.cmd("ZenMode")
+end)
