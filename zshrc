@@ -31,9 +31,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-alias owo="vim ~/cp/owo/eek.cpp"
-alias uwu="vim ~/cp/owo/jizz.cpp"
-alias cwc="vim ~/cp/owo/cwc.c"
+alias owo="vim ~/code/owo/eek.cpp"
+alias uwu="vim ~/code/owo/jizz.cpp"
+alias cwc="vim ~/code/owo/cwc.c"
 alias reload="clear && . ~/.zshrc"
 alias eek="toilet -f future --gay \"[Knapsack DP is harder than FFT.]\" -w 95"
 alias jizz="toilet -f future --gay \"[Knapsack DP is NP-Hard, but FFT is O(N log N).]\" -w 135"
@@ -57,3 +57,7 @@ export PATH=$PATH:/home/lemon/go/bin
 eval $(thefuck --alias)
 
 alias vim=nvim
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
