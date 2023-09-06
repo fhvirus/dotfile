@@ -19,7 +19,7 @@ o.signcolumn = 'yes:1'
 o.scrolloff = 4
 o.mouse = ''
 
-vim.cmd('set clipboard+=unnamedplus')
+-- vim.cmd('set clipboard+=unnamedplus')
 
 -- Tab related
 o.cindent = true
@@ -61,9 +61,9 @@ autocmd InsertEnter * call Fcitx2insert()
 ]]
 
 vim.cmd [[
-nmap <buffer> <F4> :%d<CR>:r ~/code/owo/templates/template.cpp<CR>kJ9zF13G
+nmap <buffer> <F4> :%d<CR>:r ~/code/owo/templates/template.cpp<CR>kJ19zF23G
 nmap <buffer> <F5> :%d<CR>:r ~/code/owo/templates/minimum.cpp<CR>kJ5G
 nmap <buffer> <F6> :vs ~/code/owo/in.in<CR>:vert res 30<CR>
-nmap <buffer> <F7> :w<CR>:!g++ -Wall -Wconversion -Wfatal-errors -g -std=c++20 -fsanitize=undefined,address -DOWO "%" -o ~/code/owo/run<CR>
+nmap <buffer> <F7> :w<CR>:!g++ -Wall -Wconversion -Wfatal-errors -g -std=c++20 -fsanitize=undefined,address -DOWO -DNONTOI "%" -o ~/code/owo/run<CR>
 nmap <buffer> <F8> :w<CR>:!echo "\t\tinput\n" && cat ~/code/owo/in.in && echo "\n\t\toutput\n" && ~/code/owo/run < ~/code/owo/in.in<CR>
 ]]

@@ -1,7 +1,8 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'nord'
+    theme = 'nord',
+    disabled_filetypes = { 'NvimTree' }
   },
   sections = {
     lualine_a = {

@@ -53,6 +53,7 @@ local plugins = {
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
+  'norcalli/nvim-colorizer.lua',
 }
 
 local opts = {

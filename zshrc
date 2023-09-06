@@ -39,7 +39,7 @@ alias eek="toilet -f future --gay \"[Knapsack DP is harder than FFT.]\" -w 95"
 alias jizz="toilet -f future --gay \"[Knapsack DP is NP-Hard, but FFT is O(N log N).]\" -w 135"
 alias clock="tock -c -m -s"
 alias fd="fdfind"
-alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++17 -fsanitize=undefined,address'
+alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++17 -fsanitize=undefined,address -DNONTOI'
 alias csievpn='sudo openvpn ~/Documents/school/NTU/newconfig25.ovpn'
 
 source $HOME/.fzf.zsh
@@ -52,12 +52,19 @@ export GOPATH=/home/lemon/go
 
 export PATH=$PATH:/home/lemon/go/bin
 
+# For zsteg maybe
+export RUBY_THREAD_VM_STACK_SIZE=500000000
+
 [ -f "/home/lemon/.ghcup/env" ] && source "/home/lemon/.ghcup/env" # ghcup-env
 
 eval $(thefuck --alias)
 
-alias vim=nvim
+# alias vim=nvim
 
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm 
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
