@@ -13,7 +13,11 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   'shaunsingh/nord.nvim',
-  'lukas-reineke/headlines.nvim',
+  {
+    'lukas-reineke/headlines.nvim',
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = true,
+  },
   'nvim-tree/nvim-web-devicons',
   'nvim-lualine/lualine.nvim',
   {
@@ -54,6 +58,7 @@ local plugins = {
   'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
   'norcalli/nvim-colorizer.lua',
+  'searleser97/cpbooster.vim',
 }
 
 local opts = {
