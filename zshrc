@@ -16,12 +16,14 @@ export FZF_DEFAULT_OPTS="--layout=reverse --inline-info \
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export BAT_THEME="Nord"
+export PATH=$PATH:~/.local/bin
 
 # Command Alias
 alias fd="fdfind"
 alias bat="batcat"
 alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++17 -fsanitize=undefined,address -DNONTOI'
 alias owo="vim ~/code/owo/eek.cpp"
+alias csievpn='sudo openvpn ~/Documents/school/NTU/newconfig25.ovpn'
 
 ##################################################################
 # Below are the original zsh after installing oh-my-zsh and fzf. #
