@@ -37,11 +37,9 @@ vim.keymap.set("n", "<leader>z", function()
   vim.cmd("ZenMode")
 end)
 
-if vim.bo.filetype == 'cpp' then
-  vim.keymap.set("no", "<leader>cl", function()
-    vim.cmd("Load")
-  end)
-end
+vim.keymap.set("n", "<leader>cl", function()
+  vim.cmd("Load")
+end)
 
 -- Modified from https://zhuanlan.zhihu.com/p/558359369
 vim.cmd [[

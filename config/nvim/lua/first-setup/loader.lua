@@ -4,7 +4,7 @@ local conf = require("telescope.config").values
 local actions = require "telescope.actions"
 local action_state = require "telescope.actions.state"
 
-local load_cwd = { "~/code/nontoi/codebook" }
+local load_cwd = "~/code/nontoi/codebook"
 local load_dirs = { "~/code/nontoi/codebook" }
 local function load_func ()
   require('telescope.builtin').find_files(require('telescope.themes').get_cursor{
