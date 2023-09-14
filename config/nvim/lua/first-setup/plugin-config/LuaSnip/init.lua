@@ -1,7 +1,8 @@
 require("luasnip").config.set_config {
   history = false,
   enable_autosnippets = true,
-  update_events = 'TextChanged,TextChangedI', store_selection_keys = "<Tab>",
+  update_events = 'TextChanged,TextChangedI',
+  store_selection_keys = "<Tab>"
 }
 
 vim.cmd [[
@@ -31,4 +32,4 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 require("luasnip.loaders.from_lua").lazy_load({paths = {"~/.config/nvim/LuaSnip/"} })
--- vim.keymap.set('', '<Leader>L', '<Cmd>lua require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})<CR>')
+vim.keymap.set('', '<Leader>L', '<Cmd>lua require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})<CR>')
