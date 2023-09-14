@@ -24,6 +24,7 @@ alias bat="batcat"
 alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++17 -fsanitize=undefined,address -DNONTOI'
 alias owo="vim ~/code/owo/eek.cpp"
 alias csievpn='sudo openvpn ~/Documents/school/NTU/newconfig25.ovpn'
+alias readqr='while :; do import -silent -window root bmp:- | zbarimg - 2>/dev/null; sleep 1; done'
 
 ##################################################################
 # Below are the original zsh after installing oh-my-zsh and fzf. #
@@ -130,8 +131,6 @@ alias csievpn='sudo openvpn ~/Documents/school/NTU/newconfig25.ovpn'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -117,3 +117,4 @@ alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++17 -fsanitize=undefine
 #     . /etc/bash_completion
 #   fi
 # fi
+. "$HOME/.cargo/env"
