@@ -9,18 +9,5 @@ tex.in_text = function() return not tex.in_mathzone() end
 return {
   s({ trig = "hi" },
     { t("Hello, world!"), }
-  ),
-  s({trig="env", snippetType="autosnippet"},
-    fmta([[
-    \begin{<>}
-      <>
-    \end{<>}
-    ]],
-    {
-      i(1),
-      i(2),
-      rep(1),  -- this node repeats insert node i(1)
-    }
-    )
-  ),
+  )
 }
