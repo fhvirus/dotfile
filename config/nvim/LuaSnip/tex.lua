@@ -262,5 +262,319 @@ return {
         f( function(_, snip) return Greek[snip.captures[2]] end )
       }
     )
+  ),
+  -- SUPERSCRIPT
+  s({trig = "([%w%)%]%}])'", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>^{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- SUBSCRIPT
+  s({trig = "([%w%)%]%}]);", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>_{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- SUBSCRIPT AND SUPERSCRIPT
+  s({trig = "([%w%)%]%}])__", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>^{<>}_{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        i(1),
+        i(2),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- TEXT SUBSCRIPT
+  s({trig = 'sd', snippetType="autosnippet", wordTrig=false},
+    fmta("_{\\mathrm{<>}}",
+      { d(1, get_visual) }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- SUPERSCRIPT SHORTCUT
+  -- Places the first alphanumeric character after the trigger into a superscript.
+  s({trig = '([%w%)%]%}])"([%w])', regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    fmta(
+      "<>^{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        f( function(_, snip) return snip.captures[2] end ),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- SUBSCRIPT SHORTCUT
+  -- Places the first alphanumeric character after the trigger into a subscript.
+  s({trig = '([%w%)%]%}]):([%w])', regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    fmta(
+      "<>_{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        f( function(_, snip) return snip.captures[2] end ),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- FRACTION
+  s({trig = "([^%a])ff", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>\\frac{<>}{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+        i(2),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- ABSOLUTE VALUE
+  s({trig = "([^%a])aa", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    fmta(
+      "<>\\abs{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- FLOOR
+  s({trig = "([^%a])fl", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    fmta(
+      "<>\\floor{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- CEILING
+  s({trig = "([^%a])ce", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    fmta(
+      "<>\\ceil{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- INNER PRODUCT
+  s({trig = "([^%a])inn", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    fmta(
+      "<>\\inner{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- NORM
+  s({trig = "([^%a])nn", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    fmta(
+      "<>\\norm{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- SET
+  s({trig = "([^%a])set", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    fmta(
+      "<>\\set{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- SQUARE ROOT
+  s({trig = "([^%\\])sq", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>\\sqrt{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- BINOMIAL SYMBOL
+  s({trig = "([^%\\])bnn", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>\\binom{<>}{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        i(1),
+        i(2),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- VECTOR, i.e. \overightarrow
+  s({trig = "([^%a])vv", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>\\vvec{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- VECTOR, i.e. \mathbf
+  s({trig = "([^%a])bv", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>\\bvec{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        d(1, get_visual),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- TRANSPOSE
+  s({trig = "([%w%)%]%}])T", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+    fmta( "<>^{T}", { f( function(_, snip) return snip.captures[1] end ), }),
+    {condition = tex.in_mathzone}
+  ),
+  -- SUM with lower limit
+  s({trig = "([^%a])ssm", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>\\sum\\limits_{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        i(1),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- SUM with upper and lower limit
+  s({trig = "([^%a])smm", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>\\sum\\limits_{<>}^{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        i(1),
+        i(2),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- MIN
+  s({trig = "([^%a])min", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>\\min\\limits_{<>}{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        i(1),
+        i(2)
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- MAX
+  s({trig = "([^%a])max", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>\\max\\limits_{<>}{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        i(1),
+        i(2)
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- ARROWS
+  s({trig = "->", snippetType="autosnippet"},
+    t("\\to"), {condition = tex.in_mathzone}),
+  s({trig = "=>", snippetType="autosnippet"},
+    t("\\implies"), {condition = tex.in_mathzone}),
+  s({trig = "<-", snippetType="autosnippet"},
+    t("\\gets"), {condition = tex.in_mathzone}),
+  s({trig = "<=", snippetType="autosnippet"},
+    t("\\impliedby"), {condition = tex.in_mathzone}),
+  s({trig = "iff", snippetType="autosnippet",},
+    t("\\iff"), {condition = tex.in_mathzone}),
+  s({trig = "><", snippetType="autosnippet"},
+    t("\\contra"), {condition = tex.in_mathzone}),
+  -- URL 
+  s({trig="url"},
+    fmta( [[\url{<>}]],
+      { d(1, get_visual), })),
+  -- HREF 
+  s({trig="href"},
+    fmta(
+      [[\href{<>}{<>}]],
+      {
+        i(1, "url"),
+        i(2, "display name")
+      }
+    )
+  ),
+  -- HREF command with URL in visual selection
+  s({trig="LU", snippetType="autosnippet"},
+    fmta(
+      [[\href{<>}{<>}]],
+      {
+        d(1, get_visual),
+        i(2)
+      }
+    )
+  ),
+  -- HREF command with text in visual selection
+  s({trig="LL", snippetType="autosnippet"},
+    fmta(
+      [[\href{<>}{<>}]],
+      {
+        i(1),
+        d(2, get_visual)
+      }
+    )
+  ),
+  -- SECTION
+  s({trig="h1", snippetType="autosnippet"},
+    fmta(
+      [[\section{<>}]],
+      {
+        d(1, get_visual),
+      }
+    )
+  ),
+  -- SUBSECTION
+  s({trig="h2", snippetType="autosnippet"},
+    fmta(
+      [[\subsection{<>}]],
+      {
+        d(1, get_visual),
+      }
+    )
+  ),
+  -- SUBSUBSECTION
+  s({trig="h3", snippetType="autosnippet"},
+    fmta(
+      [[\subsubsection{<>}]],
+      {
+        d(1, get_visual),
+      }
+    )
   )
 }
