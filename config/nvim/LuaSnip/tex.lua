@@ -1,6 +1,7 @@
 -- Mostly from https://github.com/ejmastnak/dotfiles/
 local helpers = require('first-setup.plugin-config.LuaSnip.helper')
 local get_visual = helpers.get_visual
+local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 -- Math context detection 
 local tex = {}
@@ -78,10 +79,8 @@ return {
       \begin{figure}[<>]
         \centering
         \includegraphics[width=<>\linewidth]{<>}
-        \caption{<>}
-        \label{fig:<>}
       \end{figure}]],
-      { i(1, "htbp"), i(2), i(3, "caption"), i(4, "label"), i(5) }
+      { i(1, "htbp"), i(2), i(3) }
     ),
     { condition = line_begin }
   ),
@@ -109,7 +108,7 @@ return {
   s({ trig = "all", dscr = "Align", snippetType="autosnippet" },
     fmta([[
       \begin{align*}
-        \item <>
+        <>
       \end{align*}]],
       { i(1) }
     ),
@@ -264,7 +263,11 @@ return {
     )
   ),
   -- SUPERSCRIPT
+<<<<<<< HEAD
   s({trig = "([%w%)%]%}])'", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+=======
+  s({trig = "([%w%)%]%}])^", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+>>>>>>> 140d052 (More LuaSnips)
     fmta(
       "<>^{<>}",
       {
@@ -275,7 +278,11 @@ return {
     {condition = tex.in_mathzone}
   ),
   -- SUBSCRIPT
+<<<<<<< HEAD
   s({trig = "([%w%)%]%}]);", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+=======
+  s({trig = "([%w%)%]%}])_", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+>>>>>>> 140d052 (More LuaSnips)
     fmta(
       "<>_{<>}",
       {
@@ -285,6 +292,7 @@ return {
     ),
     {condition = tex.in_mathzone}
   ),
+<<<<<<< HEAD
   -- SUBSCRIPT AND SUPERSCRIPT
   s({trig = "([%w%)%]%}])__", wordTrig=false, regTrig = true, snippetType="autosnippet"},
     fmta(
@@ -297,6 +305,8 @@ return {
     ),
     {condition = tex.in_mathzone}
   ),
+=======
+>>>>>>> 140d052 (More LuaSnips)
   -- TEXT SUBSCRIPT
   s({trig = 'sd', snippetType="autosnippet", wordTrig=false},
     fmta("_{\\mathrm{<>}}",
@@ -304,6 +314,7 @@ return {
     ),
     {condition = tex.in_mathzone}
   ),
+<<<<<<< HEAD
   -- SUPERSCRIPT SHORTCUT
   -- Places the first alphanumeric character after the trigger into a superscript.
   s({trig = '([%w%)%]%}])"([%w])', regTrig = true, wordTrig = false, snippetType="autosnippet"},
@@ -330,6 +341,10 @@ return {
   ),
   -- FRACTION
   s({trig = "([^%a])ff", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+=======
+  -- FRACTION
+  s({trig = "([^%a%\\])//", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+>>>>>>> 140d052 (More LuaSnips)
     fmta(
       "<>\\frac{<>}{<>}",
       {
@@ -341,7 +356,11 @@ return {
     {condition = tex.in_mathzone}
   ),
   -- ABSOLUTE VALUE
+<<<<<<< HEAD
   s({trig = "([^%a])aa", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+=======
+  s({trig = "([^%a%\\])aa", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+>>>>>>> 140d052 (More LuaSnips)
     fmta(
       "<>\\abs{<>}",
       {
@@ -352,7 +371,11 @@ return {
     {condition = tex.in_mathzone}
   ),
   -- FLOOR
+<<<<<<< HEAD
   s({trig = "([^%a])fl", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+=======
+  s({trig = "([^%a%\\])fl", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+>>>>>>> 140d052 (More LuaSnips)
     fmta(
       "<>\\floor{<>}",
       {
@@ -363,7 +386,11 @@ return {
     {condition = tex.in_mathzone}
   ),
   -- CEILING
+<<<<<<< HEAD
   s({trig = "([^%a])ce", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+=======
+  s({trig = "([^%a%\\])ce", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+>>>>>>> 140d052 (More LuaSnips)
     fmta(
       "<>\\ceil{<>}",
       {
@@ -374,7 +401,11 @@ return {
     {condition = tex.in_mathzone}
   ),
   -- INNER PRODUCT
+<<<<<<< HEAD
   s({trig = "([^%a])inn", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+=======
+  s({trig = "([^%a%\\])inn", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+>>>>>>> 140d052 (More LuaSnips)
     fmta(
       "<>\\inner{<>}",
       {
@@ -385,7 +416,11 @@ return {
     {condition = tex.in_mathzone}
   ),
   -- NORM
+<<<<<<< HEAD
   s({trig = "([^%a])nn", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+=======
+  s({trig = "([^%a%\\])nn", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+>>>>>>> 140d052 (More LuaSnips)
     fmta(
       "<>\\norm{<>}",
       {
@@ -396,7 +431,11 @@ return {
     {condition = tex.in_mathzone}
   ),
   -- SET
+<<<<<<< HEAD
   s({trig = "([^%a])set", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+=======
+  s({trig = "([^%a%\\])set", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+>>>>>>> 140d052 (More LuaSnips)
     fmta(
       "<>\\set{<>}",
       {
