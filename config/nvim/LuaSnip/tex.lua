@@ -19,13 +19,14 @@ tex.in_tikz = function() return tex.in_env('tikzpicture') end
 tex.in_algo = function() return tex.in_env('algorithmic') end
 
 local Greek = {
-  a = "alpha"   , b  = "beta"       , g = "gamma" , G = "Gamma"   , d  = "delta"   , D  = "Delta"    ,
-  e = "epsilon" , ve = "varepsilon" , z = "zeta"  , h = "eta"     , q  = "theta"   , vq = "vartheta" ,
-  Q = "Theta"   , k  = "kappa"      , i = "iota"  , l = "lambda"  , L  = "Lambda"  , m  = "mu"       ,
-  n = "nu"      , x  = "xi"         , X = "Xi"    , p = "pi"      , P  = "Pi"      , r  = "rho"      ,
-  s = "sigma"   , S  = "Sigma"      , t = "tau"   , f = "phi"     , vf = "varphi"  , F  = "Phi"      ,
-  o = "omega"   , O  = "Omega"      , c = "chi"   , y = "upsilon" , Y  = "Upsilon" , v  = "psi"      , V = "Psi"
+  a = "alpha"   , b = "beta"    , g = "gamma"  , G = "Gamma" , d = "delta" , D = "Delta" ,
+  e = "epsilon" , z = "zeta"    , h = "eta"    , q = "theta" , Q = "Theta" , k = "kappa" ,
+  i = "iota"    , l = "lambda"  , L = "Lambda" , m = "mu"    , n = "nu"    , x = "xi"    ,
+  X = "Xi"      , p = "pi"      , P = "Pi"     , r = "rho"   , s = "sigma" , S = "Sigma" ,
+  t = "tau"     , f = "phi"     , F = "Phi"    , o = "omega" , O = "Omega" , c = "chi"   ,
+  y = "upsilon" , Y = "Upsilon" , w = "psi"    , W = "Psi"
 };
+local VarGreek = { ve = "varepsilon" , vt  = "vartheta" , vf = "varphi" };
 
 return {
   -- DOCUMENT TEMPLATE
@@ -254,11 +255,19 @@ return {
     { condition = tex.in_mathzone }
   ),
   -- GREEK ALPHABETS
-  s({trig = "([^%a]);([%a])", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+  s({trig = "([^%a]);([a-uw-zA-Z])", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta("<>\\<>",
       {
         f( function(_, snip) return snip.captures[1] end ),
         f( function(_, snip) return Greek[snip.captures[2]] end )
+      }
+    )
+  ),
+  s({trig = "([^%a]);(v[%a])", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    fmta("<>\\<>",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        f( function(_, snip) return VarGreek[snip.captures[2]] end )
       }
     )
   ),
@@ -539,5 +548,13 @@ return {
         d(1, get_visual),
       }
     )
+  ),
+  -- ML hypothesis
+  s({trig = "([^%a])hyp", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>\\mathcal{H}",
+      { f( function(_, snip) return snip.captures[1] end ) }
+    ),
+    {condition = tex.in_mathzone}
   )
 }
