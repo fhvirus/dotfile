@@ -115,6 +115,16 @@ return {
     ),
     { condition = line_begin }
   ),
+  -- CASES
+  s({ trig = "case", dscr = "Cases", snippetType="autosnippet" },
+    fmta([[
+      \begin{cases}
+        <>
+      \end{cases}]],
+      { i(1) }
+    ),
+    { condition = line_begin }
+  ),
   -- MINTED
   s({ trig = "mint", dscr = "Minted", snippetType="autosnippet" },
     fmta([[
@@ -145,7 +155,7 @@ return {
     { condition = line_begin }
   ),
   -- INLINE MATH
-  s({trig = "([^%l])mm", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+  s({trig = "([^%l%a])mm", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta([[ <>\( <> \) ]],
       {
         f( function(_, snip) return snip.captures[1] end ),
@@ -452,7 +462,7 @@ return {
     {condition = tex.in_mathzone}
   ),
   -- MIN
-  s({trig = "([^%a])min", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+  s({trig = "([^%a])mnn", wordTrig = false, regTrig = true, snippetType="autosnippet"},
     fmta(
       "<>\\min\\limits_{<>}{<>}",
       {
@@ -464,7 +474,7 @@ return {
     {condition = tex.in_mathzone}
   ),
   -- MAX
-  s({trig = "([^%a])max", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+  s({trig = "([^%a])mxx", wordTrig = false, regTrig = true, snippetType="autosnippet"},
     fmta(
       "<>\\max\\limits_{<>}{<>}",
       {
@@ -502,52 +512,35 @@ return {
       }
     )
   ),
-  -- HREF command with URL in visual selection
-  s({trig="LU", snippetType="autosnippet"},
-    fmta(
-      [[\href{<>}{<>}]],
-      {
-        d(1, get_visual),
-        i(2)
-      }
-    )
-  ),
-  -- HREF command with text in visual selection
-  s({trig="LL", snippetType="autosnippet"},
-    fmta(
-      [[\href{<>}{<>}]],
-      {
-        i(1),
-        d(2, get_visual)
-      }
-    )
-  ),
   -- SECTION
   s({trig="h1", snippetType="autosnippet"},
-    fmta(
-      [[\section{<>}]],
-      {
-        d(1, get_visual),
-      }
-    )
+    fmta( [[\section{<>}]], { d(1, get_visual), }),
+    { condition = line_begin }
   ),
   -- SUBSECTION
   s({trig="h2", snippetType="autosnippet"},
-    fmta(
-      [[\subsection{<>}]],
-      {
-        d(1, get_visual),
-      }
-    )
+    fmta( [[\subsection{<>}]], { d(1, get_visual), }),
+    { condition = line_begin }
   ),
   -- SUBSUBSECTION
   s({trig="h3", snippetType="autosnippet"},
-    fmta(
-      [[\subsubsection{<>}]],
-      {
-        d(1, get_visual),
-      }
-    )
+    fmta( [[\subsubsection{<>}]], { d(1, get_visual), }),
+    { condition = line_begin }
+  ),
+  -- SECTION*
+  s({trig="H1", snippetType="autosnippet"},
+    fmta( [[\section*{<>}]], { d(1, get_visual), }),
+    { condition = line_begin }
+  ),
+  -- SUBSECTION*
+  s({trig="H2", snippetType="autosnippet"},
+    fmta( [[\subsection*{<>}]], { d(1, get_visual), }),
+    { condition = line_begin }
+  ),
+  -- SUBSUBSECTION
+  s({trig="H3", snippetType="autosnippet"},
+    fmta( [[\subsubsection*{<>}]], { d(1, get_visual), }),
+    { condition = line_begin }
   ),
   -- ML hypothesis
   s({trig = "([^%a])hyp", wordTrig = false, regTrig = true, snippetType="autosnippet"},
