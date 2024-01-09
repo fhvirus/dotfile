@@ -170,7 +170,7 @@ return {
     )
   ),
   -- DISPLAY MATH
-  s({trig = "([^%l])dm", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+  s({trig = "([^%l%a])dm", regTrig = true, wordTrig = false, snippetType="autosnippet"},
     fmta([[ <>\[ <> \] ]],
       {
         f( function(_, snip) return snip.captures[1] end ),

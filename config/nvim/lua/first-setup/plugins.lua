@@ -59,7 +59,10 @@ local plugins = {
   'neovim/nvim-lspconfig',
   'norcalli/nvim-colorizer.lua',
   'searleser97/cpbooster.vim',
-  'godlygeek/tabular'
+  'godlygeek/tabular',
+
+  'eandrju/cellular-automaton.nvim',
+  'lewis6991/gitsigns.nvim'
 }
 
 local opts = {
