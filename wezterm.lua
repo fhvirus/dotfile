@@ -15,9 +15,23 @@ end
 -- For example, changing the color scheme:
 config.color_scheme = "nord"
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity = 0.85
-config.text_background_opacity = 0
-config.font = wezterm.font 'Hack Nerd Font Mono'
+config.window_background_opacity = 0.9
+config.font = wezterm.font_with_fallback {
+  'Hack Nerd Font Mono',
+  'Noto Sans CJK TC'
+}
+
+-- https://github.com/wez/wezterm/issues/250#issuecomment-902603506
+-- for fcitx* support
+config.use_ime = true
+
+config.keys = {
+  {
+    key = 'F11',
+    -- mods = 'SHIFT|CTRL',
+    action = wezterm.action.ToggleFullScreen,
+  },
+}
 
 -- and finally, return the configuration to wezterm
 return config
