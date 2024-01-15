@@ -28,7 +28,6 @@ alias owo="vim ~/code/owo/eek.cpp"
 alias csievpn='sudo openvpn ~/Documents/school/NTU/newconfig25.ovpn'
 alias readqr='while :; do import -silent -window root bmp:- | zbarimg - 2>/dev/null; sleep 1; done'
 alias clip='(){ ${@:1} | xclip -sel clip ;}'
-alias lvim='NVIM_APPNAME=lvim nvim'
 
 ##################################################################
 # Below are the original zsh after installing oh-my-zsh and fzf. #
@@ -137,7 +136,24 @@ alias lvim='NVIM_APPNAME=lvim nvim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# from https://github.com/nvm-sh/nvm/issues/2724#issuecomment-1336537635
+lazy_load_nvm() {
+  unset -f npm node nvm
+  export NVM_DIR=~/.nvm
+  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+}
+npm() {
+  lazy_load_nvm
+  npm $@
+}
+node() {
+  lazy_load_nvm
+  node $@
+}
+nvm() {
+  lazy_load_nvm
+  nvm $@
+}
 
 [ -f "/home/lemon/.ghcup/env" ] && source "/home/lemon/.ghcup/env" # ghcup-env
