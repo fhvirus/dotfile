@@ -16,7 +16,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse --inline-info \
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export BAT_THEME="Nord"
-export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin:~/.local/share/bob/nvim-bin
 export TPS_TASK_TEMPLATES_PATH=$HOME/.local/share/tps/task-templates
 
 # Command Alias
@@ -28,6 +28,7 @@ alias owo="vim ~/code/owo/eek.cpp"
 alias csievpn='sudo openvpn ~/Documents/school/NTU/newconfig25.ovpn'
 alias readqr='while :; do import -silent -window root bmp:- | zbarimg - 2>/dev/null; sleep 1; done'
 alias clip='(){ ${@:1} | xclip -sel clip ;}'
+alias lvim='NVIM_APPNAME=lvim nvim'
 
 ##################################################################
 # Below are the original zsh after installing oh-my-zsh and fzf. #

@@ -1,36 +1,6 @@
 -- Mostly from https://github.com/ejmastnak/dotfiles/
---local helpers = require('first-setup.plugin-config.LuaSnip.helper')
--- local get_visual = helpers.get_visual
-
--- local M = {}
--- 
--- -- Be sure to explicitly define these LuaSnip node abbreviations!
--- local ls = require("luasnip")
--- local sn = ls.snippet_node
--- local i = ls.insert_node
--- 
--- function M.get_visual(args, parent)
---   if (#parent.snippet.env.LS_SELECT_RAW > 0) then
---     return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
---   else
---     return sn(nil, i(1, ''))
---   end
--- end
--- 
--- return M
-
-local ls = require("luasnip")
-local sn = ls.snippet_node
-local i = ls.insert_node
-
-function get_visual(args, parent)
-  if (#parent.snippet.env.LS_SELECT_RAW > 0) then
-    return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
-  else
-    return sn(nil, i(1, ''))
-  end
-end
-
+local helpers = require('first-setup.plugin-config.LuaSnip.helper')
+local get_visual = helpers.get_visual
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 -- Math context detection 

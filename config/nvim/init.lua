@@ -1,1 +1,2 @@
-require("first-setup")
+require("second.core")
+require("second.lazy")
