@@ -16,6 +16,6 @@ require("lazy").setup("second.plugins", {
     colorscheme = { "nord" },
   },
 	ui = {
-		border = "rounded",
+		border = "double",
 	},
 })

@@ -15,7 +15,7 @@ o.ruler = false
 o.laststatus = 2
 o.showcmd = true
 o.showmode = false
-o.fillchars = 'eob: '
+o.fillchars = { eob = ' ' }
 o.signcolumn = 'yes:1'
 o.scrolloff = 4
 o.wrap = false
@@ -43,4 +43,4 @@ o.expandtab = true
 o.shiftround = true
 
 o.undofile = true
-o.undodir = os.getenv("HOME") .. "/.config/nvim/undodir"
+o.undodir = { os.getenv("HOME") .. "/.config/nvim/undodir" }
