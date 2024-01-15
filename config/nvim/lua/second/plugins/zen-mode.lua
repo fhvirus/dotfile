@@ -10,7 +10,8 @@ return {
     window = {
       width = 80,
       options = {
-        signcolumn = "no"
+        signcolumn = "no",
+        scrolloff = 80,
       }
     },
     plugins = {
