@@ -19,11 +19,11 @@ o.fillchars = { eob = ' ' }
 o.signcolumn = 'yes:1'
 o.scrolloff = 4
 o.wrap = false
-o.conceallevel = 2
+-- o.conceallevel = 2
 
 o.autoread = true
 o.autowrite = true
-o.autochdir = true
+-- o.autochdir = true
 
 o.mouse = ''
 o.splitright = true

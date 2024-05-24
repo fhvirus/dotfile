@@ -14,6 +14,7 @@ return {
       \ 'executable' : 'latexmk',
       \ 'hooks' : [],
       \ 'options' : [
+      \   '-bibtex',
       \   '-pdfxe',
       \   '-shell-escape',
       \   '-verbose',

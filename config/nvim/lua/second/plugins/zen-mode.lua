@@ -11,12 +11,16 @@ return {
       width = 80,
       options = {
         signcolumn = "no",
-        scrolloff = 80,
+        scrolloff = 7,
       }
     },
     plugins = {
+      twilight = { enabled = false },
       tmux = { enabled = true },
-      wezterm = { enabled = true },
+      wezterm = {
+        enabled = true,
+        font = "+6"
+      },
     }
   },
   keys = {

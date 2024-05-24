@@ -11,7 +11,7 @@ return {
   lazy = false,
   keys = {
     { "<leader>ee", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file explorer" },
-    { "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", desc = "Toggle file explorer on current file" },
+    { "<leader>ef", "<cmd>NvimTreeFindFile<CR>", desc = "Toggle file explorer on current file" },
     { "<leader>ec", "<cmd>NvimTreeCollapse<CR>", desc = "Collapse file explorer" },
     { "<leader>er", "<cmd>NvimTreeRefresh<CR>", desc = "Refresh file explorer" },
   }

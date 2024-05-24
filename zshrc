@@ -26,8 +26,9 @@ alias bat="batcat"
 alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++17 -fsanitize=undefined,address -DNONTOI'
 alias owo="vim ~/code/owo/eek.cpp"
 alias csievpn='sudo openvpn ~/Documents/school/NTU/newconfig25.ovpn'
-alias readqr='while :; do import -silent -window root bmp:- | zbarimg - 2>/dev/null; sleep 1; done'
+alias readqr="watch 'import -silent -window root bmp:- | zbarimg -'"
 alias clip='(){ ${@:1} | xclip -sel clip ;}'
+alias lvim='NVIM_APPNAME=lvim nvim'
 
 ##################################################################
 # Below are the original zsh after installing oh-my-zsh and fzf. #
@@ -157,3 +158,7 @@ nvm() {
 }
 
 [ -f "/home/lemon/.ghcup/env" ] && source "/home/lemon/.ghcup/env" # ghcup-env
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
