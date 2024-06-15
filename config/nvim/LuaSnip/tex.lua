@@ -134,10 +134,10 @@ return {
   -- ITEMIZE
   s({ trig = "itt", dscr = "Itemize", snippetType="autosnippet" },
     fmta([[
-      \begin{itemize}
+      \begin{itemize}<>
         \item <>
       \end{itemize}]],
-      { i(1) }
+      { i(1), i(2) }
     ),
     { condition = line_begin }
   ),

@@ -55,6 +55,7 @@ Categories=Network
 	- update sshkeys everywhere (ex. github)
 - vim-plug
 - zathura
+    - zathura-pdf-mupdf
     - xdotool
 - neovim
     - [bob](https://github.com/MordechaiHadad/bob)
