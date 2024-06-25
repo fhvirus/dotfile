@@ -17,7 +17,8 @@ config.color_scheme = "nord"
 config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 0.9
 config.font = wezterm.font_with_fallback({
-	"Hack Nerd Font Mono",
+	-- "Hack Nerd Font Mono",
+  "JetBrains Mono",
 	"Noto Sans CJK TC",
 })
 config.font_size = 14

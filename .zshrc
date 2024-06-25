@@ -5,7 +5,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # FZF config
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info \
 	--color='fg:#D8DEE9,bg:#2E3440,hl:#81A1C1'\
 	--color='fg+:#D8DEE9,bg+:#3B4252,hl+:#81A1C1'\
