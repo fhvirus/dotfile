@@ -2,5 +2,9 @@
 	name = FHVirus
 	email = froghackervirus@gmail.com
 [alias]
+	mt = mergetool
+	rc = rebase --continue
 [pull]
 	rebase = true
+[core]
+	editor = vim

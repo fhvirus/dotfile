@@ -17,19 +17,22 @@ export FZF_DEFAULT_OPTS="--layout=reverse --inline-info \
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export BAT_THEME="Nord"
-export PATH=$PATH:~/.local/bin:~/.local/share/bob/nvim-bin
-export TPS_TASK_TEMPLATES_PATH=$HOME/.local/share/tps/task-templates
+# export TPS_TASK_TEMPLATES_PATH=$HOME/.local/share/tps/task-templates
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/share/bob/nvim-bin
+export PATH=$PATH:~/.cargo/bin
+export PYTHONPYCACHEPREFIX="$HOME/.cache/pycache"
 
 # Command Alias
-alias fd="fdfind"
+# alias fd="fdfind"
 alias reload="source ~/.zshrc"
-alias bat="batcat"
-alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++17 -fsanitize=undefined,address -DNONTOI -o run'
-alias owo="cd ~/code/owo/"
-alias csievpn='sudo openvpn ~/Documents/school/NTU/newconfig25.ovpn'
-alias readqr="watch 'import -silent -window root bmp:- | zbarimg -'"
-alias clip='(){ ${@:1} | xclip -sel clip ;}'
-alias lvim='NVIM_APPNAME=lvim nvim'
+# alias bat="batcat"
+alias c='g++ -Wall -Wconversion -Wextra -Wfatal-errors -g -std=c++17 -fsanitize=undefined,address -DOWO -DTOKI -o run'
+# alias owo="cd ~/code/owo/"
+# alias csievpn='sudo openvpn ~/Documents/school/NTU/newconfig25.ovpn'
+# alias readqr="watch 'import -silent -window root bmp:- | zbarimg -'"
+# alias clip='(){ ${@:1} | xclip -sel clip ;}'
+# alias lvim='NVIM_APPNAME=lvim nvim'
 
 # from https://github.com/nvm-sh/nvm/issues/2724#issuecomment-1336537635
 lazy_load_nvm() {
@@ -38,17 +41,12 @@ lazy_load_nvm() {
   [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
   [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
 }
-npm() {
-  lazy_load_nvm
-  npm $@
-}
-node() {
-  lazy_load_nvm
-  node $@
-}
-nvm() {
-  lazy_load_nvm
-  nvm $@
-}
+npm() { lazy_load_nvm; npm $@ }
+node() { lazy_load_nvm; node $@ }
+nvm() { lazy_load_nvm; nvm $@ }
 
-[ -f "/home/lemon/.ghcup/env" ] && source "/home/lemon/.ghcup/env" # ghcup-env
+# [ -f "/home/lemon/.ghcup/env" ] && source "/home/lemon/.ghcup/env" # ghcup-env
+
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

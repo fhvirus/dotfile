@@ -8,7 +8,6 @@
 -- local ls = require("luasnip")
 -- local sn = ls.snippet_node
 -- local i = ls.insert_node
--- 
 -- function M.get_visual(args, parent)
 --   if (#parent.snippet.env.LS_SELECT_RAW > 0) then
 --     return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
@@ -544,6 +543,10 @@ return {
     t("\\iff"), {condition = tex.in_mathzone}),
   s({trig = "><", snippetType="autosnippet"},
     t("\\contra"), {condition = tex.in_mathzone}),
+  -- VERBATIM 
+  s({trig="vrb"},
+    fmta( [[\verb|<>|]],
+      { d(1, get_visual), })),
   -- URL 
   s({trig="url"},
     fmta( [[\url{<>}]],

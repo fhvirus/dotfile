@@ -8,9 +8,9 @@ return {
   config = function()
     require("which-key").setup({})
     local wk = require("which-key")
-    wk.register({
-      e = { name = "nvim-tree", },
-      l = { name = "vimtex", },
-    }, { prefix = "<leader>" })
+    wk.add({
+      { "<leader>e", group = "nvim-tree" },
+      { "<leader>l", group = "vimtex" },
+    })
   end
 }

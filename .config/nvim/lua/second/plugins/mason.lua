@@ -13,12 +13,13 @@ return {
     mason_lspconfig.setup({
       ensure_installed = {
         "clangd",
+        "csharp_ls",
         "lua_ls",
         "rust_analyzer",
         "texlab",
         "pyright",
         "html",
-        "tsserver",
+        "ts_ls",
       },
       automatic_installation = true,
     })

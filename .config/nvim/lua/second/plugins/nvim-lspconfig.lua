@@ -10,12 +10,13 @@ return {
   config = function()
     local lspconfig = require("lspconfig")
     -- lspconfig.clangd.setup({})
+    lspconfig.csharp_ls.setup({})
     lspconfig.lua_ls.setup({})
     lspconfig.rust_analyzer.setup({})
     lspconfig.texlab.setup({})
     lspconfig.pyright.setup({})
     lspconfig.html.setup({})
-    lspconfig.tsserver.setup({})
+    lspconfig.ts_ls.setup({})
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
@@ -48,6 +49,7 @@ return {
         -- vim.keymap.set('n', '<space>f', function()
         --   vim.lsp.buf.format { async = true }
         -- end, opts)
+        vim.keymap.set('n', 'uo', vim.diagnostic.open_float, opts)
       end,
     })
   end

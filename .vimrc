@@ -47,5 +47,7 @@ set smartcase
 " Commands for competitive programming
 let mapleader=' '
 set timeoutlen=2000
-nmap <leader>yy :%y+
+nmap <leader>yy :%y+<CR>
 nmap <leader>pp :%d _<CR>"+P:w<CR>
+
+ca Hash w !cpp -dD -P -fpreprocessed \| tr -d '[:space:]' \| md5sum \| cut -c-6
