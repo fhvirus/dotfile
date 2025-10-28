@@ -17,20 +17,16 @@ return {
   ---@type conform.setupOpts
   opts = {
     formatters_by_ft = {
+      bash = { "shfmt" },
       lua = { "stylua" },
       python = { "isort", "black" },
     },
-    -- Set default options
     default_format_opts = {
       lsp_format = "fallback",
     },
-    -- Set up format-on-save
     format_on_save = { timeout_ms = 500 },
-    -- Customize formatters
     formatters = {
-      shfmt = {
-        append_args = { "-i", "2" },
-      },
+      shfmt = { append_args = { "-i", "2" }, },
     },
   },
   init = function()

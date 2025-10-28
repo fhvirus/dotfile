@@ -1,8 +1,10 @@
 return {
-  "shaunsingh/nord.nvim",
+  "gbprod/nord.nvim",
   priority = 1000,
   config = function()
-    vim.g.nord_disable_background = true
-    require("nord").set()
+    require("nord").setup({
+      transparent = true,
+    })
+    vim.cmd.colorscheme("nord")
   end,
 }

@@ -5,9 +5,10 @@ return {
     { "<leader>ee", "<cmd>NvimTreeToggle<CR>",   desc = "Toggle file explorer" },
     { "<leader>ef", "<cmd>NvimTreeFindFile<CR>", desc = "Toggle file explorer on current file" },
   },
-  opts = function()
+  lazy = false,
+  init = function()
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
-    return {}
-  end
+  end,
+  opts = {}
 }

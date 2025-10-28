@@ -15,6 +15,7 @@ return {
     },
     opts = {
       ensure_installed = {
+        "bashls",
         "lua_ls",
         "pyright",
         "tinymist"
