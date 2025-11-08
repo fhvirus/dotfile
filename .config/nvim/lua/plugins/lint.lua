@@ -3,7 +3,7 @@ return {
   event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   keys = {
     {
-      "<leader>l",
+      "<leader>ll",
       function()
         require("lint").try_lint()
       end,

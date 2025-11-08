@@ -4,6 +4,7 @@ return {
   opts = {
     spec = {
       { "<leader>e", group = "nvim-tree", icon = { icon = "", color = "cyan" } },
+      { "<leader>l", group = "lsp" },
       { "<leader>w", proxy = "<c-w>", group = "windows" },
       { "<leader>y", ":%y+<enter>", desc = "yank file to clipboard", mode = "n" },
       { "<leader>y", "\"+y", desc = "yank selected to clipboard", mode = "v" }
