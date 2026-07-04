@@ -8,7 +8,7 @@ config.font = wezterm.font_with_fallback({
   "JetBrains Mono",
   "Noto Sans CJK TC",
 })
-config.font_size = 17
+config.font_size = 14
 
 -- https://github.com/wez/wezterm/issues/250#issuecomment-902603506
 -- for fcitx* support

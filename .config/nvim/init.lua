@@ -16,10 +16,13 @@ vim.opt.tabstop               = 2
 vim.opt.shiftwidth            = 2
 vim.opt.expandtab             = true
 vim.opt.shiftround            = true
+vim.opt.scrolloff             = 4
 
 vim.opt.signcolumn            = "yes"
 vim.opt.termguicolors         = true
 vim.opt.wrap                  = false
+
+vim.opt.mouse                 = "c"
 
 vim.opt.splitright            = true
 vim.opt.splitbelow            = true

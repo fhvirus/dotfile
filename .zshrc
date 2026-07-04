@@ -26,18 +26,24 @@ export PYTHONPYCACHEPREFIX="$HOME/.cache/pycache"
 
 # Command Alias
 alias open="xdg-open"
-alias c='g++ -Wall -Wconversion -Wextra -Wfatal-errors -g -std=c++17 -fsanitize=undefined,address -DOWO -DTOKI -o run'
+
+# Ref: https://codeforces.com/blog/entry/154559?#comment-1372071
+CPP_FLAGS="-Wall -Wextra -Wconversion -Wshadow -Wfatal-errors -g -std=c++20 -fsanitize=undefined,address -DOWO"
+alias precompile_bits_header="g++ ${CPP_FLAGS} -fmodules -x c++-system-header -c bits/stdc++.h"
+alias c="g++ ${CPP_FLAGS} -fmodules -include bits/stdc++.h -o run"
+
+compvid () { ffmpeg -i "$1" -vf scale=640:360 -vcodec libx265 -crf 28 "$2" }
 
 # from https://github.com/nvm-sh/nvm/issues/2724#issuecomment-1336537635
-# lazy_load_nvm() {
-#   unset -f npm node nvm
-#   export NVM_DIR=~/.nvm
-#   [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-#   [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
-# }
-# npm()  { lazy_load_nvm; npm $@ }
-# node() { lazy_load_nvm; node $@ }
-# nvm()  { lazy_load_nvm; nvm $@ }
+lazy_load_nvm() {
+  unset -f npm node nvm
+  export NVM_DIR=~/.nvm
+  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+}
+npm()  { lazy_load_nvm; npm $@ }
+node() { lazy_load_nvm; node $@ }
+nvm()  { lazy_load_nvm; nvm $@ }
 
 # [ -f "/home/lemon/.ghcup/env" ] && source "/home/lemon/.ghcup/env" # ghcup-env
-# [[ ! -r '/home/euom/.opam/opam-init/init.zsh' ]] || source '/home/euom/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+[[ ! -r '/home/euom/.opam/opam-init/init.zsh' ]] || source '/home/euom/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null

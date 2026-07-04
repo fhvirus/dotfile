@@ -1,2 +1,1 @@
-alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++17 -fsanitize=undefined,address -DOWO -DNONTOI'
-. "$HOME/.cargo/env"
+alias c='g++ -Wall -Wextra -Wconversion - Wshadow -Wfatal-errors -g -std=c++20 -fsanitize=undefined,address -DOWO'
