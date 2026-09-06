@@ -29,8 +29,10 @@ alias open="xdg-open"
 
 # Ref: https://codeforces.com/blog/entry/154559?#comment-1372071
 CPP_FLAGS="-Wall -Wextra -Wconversion -Wshadow -Wfatal-errors -g -std=c++20 -fsanitize=undefined,address -DOWO"
-alias precompile_bits_header="g++ ${CPP_FLAGS} -fmodules -x c++-system-header -c bits/stdc++.h"
-alias c="g++ ${CPP_FLAGS} -fmodules -include bits/stdc++.h -o run"
+# alias precompile_bits_header="g++ ${CPP_FLAGS} -fmodules -x c++-system-header -c bits/stdc++.h"
+# alias c="g++ ${CPP_FLAGS} -fmodules -include bits/stdc++.h -o run"
+alias c="g++ ${CPP_FLAGS} -o run"
+alias tmt='python3 ~/m/tmt-cli/tmt.py'
 
 compvid () { ffmpeg -i "$1" -vf scale=640:360 -vcodec libx265 -crf 28 "$2" }
 
@@ -45,5 +47,16 @@ npm()  { lazy_load_nvm; npm $@ }
 node() { lazy_load_nvm; node $@ }
 nvm()  { lazy_load_nvm; nvm $@ }
 
-# [ -f "/home/lemon/.ghcup/env" ] && source "/home/lemon/.ghcup/env" # ghcup-env
-[[ ! -r '/home/euom/.opam/opam-init/init.zsh' ]] || source '/home/euom/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# [[ ! -r '/home/euom/.opam/opam-init/init.zsh' ]] || source '/home/euom/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+
+rbenv() {
+  unset -f rbenv
+  eval "$(rbenv init -)"
+  rbenv $@
+}
+
+conda() {
+  unset -f conda
+  source /opt/miniconda3/etc/profile.d/conda.sh
+  conda $@
+}
