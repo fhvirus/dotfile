@@ -1,5 +1,6 @@
 # ZSH config
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 ZSH_THEME="philips"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
