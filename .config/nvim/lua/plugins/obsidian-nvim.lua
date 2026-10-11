@@ -1,6 +1,9 @@
 return {
   "obsidian-nvim/obsidian.nvim",
   version = "*", -- use latest release, remove to use latest commit
+  dependencies = {
+    "ibhagwan/fzf-lua",
+  },
   ---@module 'obsidian'
   ---@type obsidian.config
   opts = {
